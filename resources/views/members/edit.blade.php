@@ -82,7 +82,7 @@
 						<div class="form-group form-inline">
 							<label class="col-sm-2">Samhu Saheli:</label>
 							<div class="checkbox">
-								<input type="checkbox" name="samhu_saheli" value="1" {{($member->samhu_saheli==1) ? 'checked="checked"' : '' }}> is Samhu Saheli member of this group?
+								<input type="checkbox" name="samhu_saheli" value="1" {{($member->samhu_saheli==1) ? 'checked="checked"' : '' }}> is she Samhu Saheli?
 							</div>
 						</div>
 						<div class="form-group form-inline">
