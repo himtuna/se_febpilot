@@ -100,7 +100,7 @@
 
 							<div class="form-group form-inline">
 								<label for="phones_count" class="col-sm-2">Phones Count: </label>
-								<input type="text" name="phones_count" placeholder="Phnnes given in the group" class="form-control">
+								<input type="text" name="phones_count" placeholder="Phones given in the group" class="form-control">
 							</div>
 					    
 					    </div>

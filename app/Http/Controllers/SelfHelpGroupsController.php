@@ -30,7 +30,8 @@ class SelfHelpGroupsController extends Controller
     public function index()
     {
         //
-        $shgs = SelfHelpGroup::all();
+        // $shgs = SelfHelpGroup::all();
+        $shgs = SelfHelpGroup::orderBy('village_id')->get();
 
         return view('self_help_groups.index',compact('shgs'));
         
