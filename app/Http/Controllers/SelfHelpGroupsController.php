@@ -12,6 +12,8 @@ use App\Village;
 
 use App\SHGCoordinator;
 
+use App\Member;
+
 
 class SelfHelpGroupsController extends Controller
 {
@@ -44,7 +46,8 @@ class SelfHelpGroupsController extends Controller
         //
         $villages = Village::all();
         $shg_coordinators = SHGCoordinator::all();
-        return view('self_help_groups.create',compact('villages','shg_coordinators'));
+        $samhu_sahelis = Member::where('samhu_saheli','=',1)->get();
+        return view('self_help_groups.create',compact('villages','shg_coordinators','samhu_sahelis'));
 
     }
 
@@ -94,7 +97,8 @@ class SelfHelpGroupsController extends Controller
 
         $villages = Village::all();
         $shg = SelfHelpGroup::findorfail($id);
-        return view('self_help_groups.edit',compact('shg','villages'));
+        $samhu_sahelis = Member::where('samhu_saheli','=',1)->get();
+        return view('self_help_groups.edit',compact('shg','villages','samhu_sahelis'));
     }
 
     /**

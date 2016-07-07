@@ -42,7 +42,7 @@
 						<div class="form-group form-inline">
 							<label for="economic_status" class="col-sm-2">Economic Status: </label>
 							
-							<select name="economic_stutus" class="form-control">
+							<select name="economic_status" class="form-control">								
 								<option value="High" @if($village->economic_status == 'High') 
 								selected="selected" @endif >High</option>
 								<option value="Medium" @if($village->economic_status == 'Medium') selected="selected" @endif>Medium</option>

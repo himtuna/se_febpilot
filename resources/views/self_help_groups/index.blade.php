@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">        
             <div class="panel panel-default">
-                <div class="panel-heading">Villages</div>
+                <div class="panel-heading">Self Help Groups</div>
 
                 <div class="panel-body">
                 <a href="{{url('self-help-groups/create')}}" class="btn btn-primary pull-right">+ Self Help Group</a>
@@ -13,29 +13,43 @@
                     <table class="table table-hover table-bordered">
                         <thead>
                             <th>SHG Name</th>
-                            <th>Village</th>                            
-                            <th>Economic Status</th>
-                            <th>Caste Status</th>
-                            <th>SHG Details</th>                            
+                            <th>SHG Details</th>
+                            <th>Socio-Economic Status</th>
+                            <th>Member Details</th>                                                        
                             <th><i class="fa fa-cog"></i></th>
                         </thead>
                         <tbody>
                             @foreach($shgs as $shg)
                             <tr>
-                                <td><strong>{{$shg->name}}</strong> <br> <small>Established On: {{$shg->established_on}}</small>
+                                <td>
+                                    <strong>{{$shg->name}}</strong> <br> 
+                                    <a href="{{url('villages')}}">{{$shg->village->name}} Village</a> <br>
+                                    <small>SHG Age: {{$shg->shg_age}}<br>
+                                    Phones issued: {{$shg->phones_count}} <br>
+                                    Total Active Members: {{count($shg->village->members)}}</small> 
                                 </td>
-                                <td> <a href="{{url('villages')}}">{{$shg->village->name}}</a><br>
-                                <small>SHG Coord.: <a href="{{url('shg-coordinators#'.$shg->shg_coordinator->id)}}">
-                                {{$shg->shg_coordinator->name}}</a></small></td>                                
                                 <td>
-                                SHG Monthly Deposit: Rs. {{$shg->monthly_deposit}} <br>
-                                {{$shg->economic_status}}<br>{{$shg->economic_status_detail}}</td>
-                                <td>{{$shg->caste_status}}<br>{{$shg->caste_status_detail}}</td>
+                                    <small> 
+                                    SHG Coord.: <a href="{{url('shg-coordinators#'.$shg->shg_coordinator->id)}}">{{$shg->shg_coordinator->name}}</a><br>
+                                    Samhu Saheli: {{$shg->samhu_saheli['name']}} <br>
+                                    Is Samshu Saheli member: {{($shg->samhu_saheli_member == 1) ? 'Yes': 'No' }}<br>
+                                    
+                                    SHG Monthly Deposit: Rs. {{$shg->monthly_deposit}} <br>
+                                    Bank Account: {{($shg->bank_account == 1) ? 'Yes': 'No' }} <br>
+                                    SHG Savings: Rs. {{$shg->savings}}
+                                    </small> 
+                                </td>                                
                                 <td>
-                                    DBP Scheme: {{($shg->dbp_scheme == 1) ? 'Yes': 'No' }} <br>
-                                    Soap Making Scheme: {{($shg->soap_making_scheme == 1) ? 'Yes': 'No' }} <br>
-                                    PPES Students: {{($shg->ppes_students == 1) ? 'Yes': 'No' }} <br>
-                                    Govt Scheme: {{$shg->govt_scheme}}
+                                   <small>Economic: {{$shg->economic_status}}<br>{{$shg->economic_status_detail}}<br>
+                                    Caste: {{$shg->caste_status}}<br>{{$shg->caste_status_detail}}</small>
+                                </td>
+                                <td>
+                                    <small>
+                                    Literacy Level: {{$shg->literacy_level}} <br>
+                                    Average Age: {{$shg->women_age_avg}}<br>
+                                    Family Profession: {{$shg->family_profession}}<br>
+                                    Marital Status: {{$shg->women_marital_count}}<br>                                  
+                                    </small>                                    
                                 </td>                                
                                 <td><a href="{{url('self-help-groups/'.$shg->id.'/edit')}}"><i class="fa fa-pencil"></i></a></td>
                             </tr>

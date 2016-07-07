@@ -24,6 +24,7 @@ class CreateSelfHelpGroupsTable extends Migration
             
             // SHG details
             $table->date('established_on')->nullable();
+            $table->string('shg_age')->nullable();
             $table->integer('monthly_deposit')->nullable();
             $table->boolean('samhu_saheli_member')->default(1);
             $table->enum('shg_meeting_day',['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'])->nullable();
