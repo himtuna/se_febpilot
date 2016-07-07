@@ -56,13 +56,14 @@ class MembersController extends Controller
     {
         //
         $member = new Member($request->all());
+        $member->save();   
 
         $filepath = 'uploads/members/'. $member->village->name .'/';
         $filename = $member->name . '.jpg';
         $image = $filepath . $filename;
         $member->image = $image;
 
-        $member->save();   
+        $member->update();   
       
         return redirect(url('members/'.$member->id));      
     }
