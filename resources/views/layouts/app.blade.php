@@ -86,7 +86,9 @@
                     <li><a href="{{ url('/feedbacks') }}">Specific Feedback</a></li>
                 </ul>
 
-
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/self-help-groups') }}">SHG Details</a></li>
+                </ul>
 
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/villages') }}">Villages</a></li>
