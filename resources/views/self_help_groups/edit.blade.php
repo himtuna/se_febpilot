@@ -60,8 +60,11 @@
 								
 								<select name="samhu_saheli_id" class="form-control samhu_saheli_id">
 									<option value selected disabled>--Samhu Saheli--</option>
+
 								@foreach($samhu_sahelis as $samhu_saheli)
+								@if(issset($shg->samhu_saheli_id))
 									<option value="{{$samhu_saheli->id}}" {{($shg->samhu_saheli_id == $samhu_saheli->id) ? 'selected="selected"' : ''}} >{{$samhu_saheli->name}} (from {{$samhu_saheli->village->name}})</option>
+									@else <option value selected disabled></option>
 								@endforeach
 								</select>
 							</div>	

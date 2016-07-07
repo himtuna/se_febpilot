@@ -47,7 +47,7 @@ class SelfHelpGroupsController extends Controller
         //
         $villages = Village::all();
         $shg_coordinators = SHGCoordinator::all();
-        $samhu_sahelis = Member::where('samhu_saheli','=',1)->get();
+        $samhu_sahelis = Member::where('samhu_saheli','=','1')->get();
         return view('self_help_groups.create',compact('villages','shg_coordinators','samhu_sahelis'));
 
     }
