@@ -48,15 +48,15 @@
 				    </div>
 
 				    <div id="menu2" class="tab-pane fade">
-				     <div class="form-group form-inline">
-							<label for="economic_status" class="col-sm-2">Economic Status: </label>
-							
-							<select name="economic_stutus" class="form-control">
-								<option value selected disabled>--Economic Status--</option>
-								<option value="High">High</option>
-								<option value="Medium">Medium</option>
-								<option value="Low">Low</option>
-							</select>
+				     	<div class="form-group form-inline">
+								<label for="economic_status" class="col-sm-2">Economic Status: </label>
+								
+								<select name="economic_status" class="form-control">
+									<option value selected disabled>--Economic Status--</option>
+									<option value="High">High</option>
+									<option value="Medium">Medium</option>
+									<option value="Low">Low</option>
+								</select>
 						</div>
 						<div class="form-group form-inline">
 							<label for="economic_status_detail" class="col-sm-2">Economic Status Detail: </label>

@@ -33,7 +33,7 @@
                                 <td>
                                     <small> 
                                     SHG Coord.: <a href="{{url('shg-coordinators#'.$shg->shg_coordinator->id)}}">{{$shg->shg_coordinator->name}}</a><br>
-                                    Samhu Saheli: {{$shg->samhu_saheli['name']}} <br>
+                                    Samhu Saheli: <a href="{{url('members/'.$shg->samhu_saheli['id'])}}">{{$shg->samhu_saheli['name']}}</a><br>
                                     Is Samshu Saheli member: {{($shg->samhu_saheli_member == 1) ? 'Yes': 'No' }}<br>
                                     
                                     SHG Monthly Deposit: Rs. {{$shg->monthly_deposit}} <br>
@@ -42,8 +42,8 @@
                                     </small> 
                                 </td>                                
                                 <td>
-                                   <small>Economic: {{$shg->economic_status}}<br>{{$shg->economic_status_detail}}<br>
-                                    Caste: {{$shg->caste_status}}<br>{{$shg->caste_status_detail}}</small>
+                                   <small>Economic: <span class="label {{($shg->economic_status == 'High' ? 'label-success' : '')}} {{($shg->economic_status == 'Medium' ? 'label-info' : '')}} {{($shg->economic_status == 'Low' ? 'label-warning' : '')}}">{{$shg->economic_status}}</span><br>{{$shg->economic_status_detail}}<br>
+                                    Caste: <span class="label {{($shg->caste_status == 'High' ? 'label-success' : '')}} {{($shg->caste_status == 'Medium' ? 'label-info' : '')}} {{($shg->caste_status == 'Low' ? 'label-warning' : '')}}">{{$shg->caste_status}}</span><br>{{$shg->caste_status_detail}}</small>
                                 </td>
                                 <td>
                                     <small>

@@ -49,16 +49,15 @@
 
 				    <div id="menu2" class="tab-pane fade">
 				     	<div class="form-group form-inline">
-							<label for="economic_status" class="col-sm-2">Economic Status: </label>
-							
-							<select name="economic_status" class="form-control">
-								<option value disabled selected></option>
-								<option value="High" @if($member->economic_status == 'High') 
-								selected="selected" @endif >High</option>
-								<option value="Medium" @if($member->economic_status == 'Medium') selected="selected" @endif>Medium</option>
-								<option value="Low" @if($member->economic_status == 'Low') selected="selected" @endif>Low</option>
-							</select>
-						</div>
+								<label for="economic_status" class="col-sm-2">Economic Status: </label>
+								
+								<select name="economic_status" class="form-control">								
+									<option value="High" @if($member->economic_status == 'High') 
+									selected="selected" @endif >High</option>
+									<option value="Medium" @if($member->economic_status == 'Medium') selected="selected" @endif>Medium</option>
+									<option value="Low" @if($member->economic_status == 'Low') selected="selected" @endif>Low</option>
+								</select>
+							</div>
 						<div class="form-group form-inline">
 							<label for="economic_status_detail" class="col-sm-2">Economic Status Detail: </label>
 							<textarea name="economic_status_detail" class="form-control" id="economic_status_detail">{{$member->economic_status_detail}}</textarea>
