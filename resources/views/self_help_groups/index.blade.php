@@ -20,6 +20,7 @@
                         </thead>
                         <tbody>
                             @foreach($shgs as $shg)
+                            <a name="{{$shg->id}}"></a>
                             <tr>
                                 <td>
                                     <strong>{{$shg->name}}</strong> <br> 

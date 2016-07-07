@@ -24,7 +24,7 @@
                             <tr>
                                 <td><strong>{{$village->name}}</strong> <br> <small>{{$village->distance}} km from PPES</small>
                                 <br><small>Total SHGs: {{$village->total_shgs}}</small></td>
-                                <td><a href="{{url('self-help-groups')}}">{{$village->self_help_groups[0]->name}}</a> <br><small>SHG Coord. <a href="{{url('shg-coordinators#'.$village->shg_coordinator->id)}}">
+                                <td><a href="{{url('self-help-groups#'.$village->self_help_groups[0]->id)}}">{{$village->self_help_groups[0]->name}}</a> <br><small>SHG Coord. <a href="{{url('shg-coordinators#'.$village->shg_coordinator->id)}}">
                                 {{$village->shg_coordinator->name}}</a></small></td>                                
                                 <td>{{$village->economic_status}}<br>{{$village->economic_status_detail}}</td>
                                 <td>{{$village->caste_status}}<br>{{$village->caste_status_detail}}</td>
