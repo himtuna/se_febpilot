@@ -28,11 +28,11 @@
 					    </div>
 
 					    <div id="menu2" class="tab-pane fade">
-					    	Economic Status: <span class="label {{($member->economic_status == 'High' ? 'label-success' : '')}} {{($member->economic_status == 'Medium' ? 'label-info' : '')}} {{($member->economic_status == 'Low' ? 'label-warning' : '')}}">{{$member->economic_status}}</span><br>
+					    	Economic Status: <span class="label {{($member->economic_status == 'High') ? 'label-success' : ''}} {{($member->economic_status == 'Medium') ? 'label-info' : ''}} {{($member->economic_status == 'Low') ? 'label-warning' : ''}}">{{$member->economic_status}}</span><br>
 					    	Details{{$member->economic_status_details}}
 					    	<hr>
 
-					    	Caste Status: <span class="label {{($member->caste_status == 'High' ? 'label-success' : '')}} {{($member->caste_status == 'Medium' ? 'label-info' : '')}} {{($member->caste_status == 'Low' ? 'label-warning' : '')}}">{{$member->caste_status}}</span> <br>
+					    	Caste Status: <span class="label {{($member->caste_status == 'High') ? 'label-success' : ''}} {{($member->caste_status == 'Medium') ? 'label-info' : ''}} {{($member->caste_status == 'Low') ? 'label-warning' : ''}}">{{$member->caste_status}}</span> <br>
 					    	Details: {{$member->caste_status_detail}}
 					     </div>
 					    

@@ -30,7 +30,7 @@
 						<div class="form-group form-inline">
 							<label for="village" class="col-sm-2">Village: </label>
 							
-							<select name="village_id" class="form-control">
+							<select name="village_id" class="form-control" required="required">
 								<option value selected disabled>--Village--</option>
 							@foreach($villages as $village)
 								<option value="{{$village->id}}">{{$village->name}}</option>

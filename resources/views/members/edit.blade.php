@@ -31,7 +31,7 @@
 						<div class="form-group form-inline">
 							<label for="village" class="col-sm-2">Village: </label>
 							
-							<select name="village_id" class="form-control">
+							<select name="village_id" class="form-control" required="required">
 								@foreach($villages as $village)
 								<option value="{{$village->id}}" {{($member->village_id == $village->id) ? 'selected="selected"' : ''}}>{{$village->name}}</option>
 							@endforeach

@@ -42,8 +42,8 @@
                                     </small> 
                                 </td>                                
                                 <td>
-                                   <small>Economic: <span class="label {{($shg->economic_status == 'High' ? 'label-success' : '')}} {{($shg->economic_status == 'Medium' ? 'label-info' : '')}} {{($shg->economic_status == 'Low' ? 'label-warning' : '')}}">{{$shg->economic_status}}</span><br>{{$shg->economic_status_detail}}<br>
-                                    Caste: <span class="label {{($shg->caste_status == 'High' ? 'label-success' : '')}} {{($shg->caste_status == 'Medium' ? 'label-info' : '')}} {{($shg->caste_status == 'Low' ? 'label-warning' : '')}}">{{$shg->caste_status}}</span><br>{{$shg->caste_status_detail}}</small>
+                                   <small>Economic: <span class="label {{($shg->economic_status == 'High') ? 'label-success' : ''}} {{($shg->economic_status == 'Medium') ? 'label-info' : ''}} {{($shg->economic_status == 'Low') ? 'label-warning' : ''}}">{{$shg->economic_status}}</span><br>{{$shg->economic_status_detail}}<br>
+                                    Caste: <span class="label {{($shg->caste_status == 'High') ? 'label-success' : ''}} {{($shg->caste_status == 'Medium') ? 'label-info' : ''}} {{($shg->caste_status == 'Low') ? 'label-warning' : ''}}">{{$shg->caste_status}}</span><br>{{$shg->caste_status_detail}}</small>
                                 </td>
                                 <td>
                                     <small>
