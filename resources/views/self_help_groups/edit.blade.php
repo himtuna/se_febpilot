@@ -64,7 +64,7 @@
 								@foreach($samhu_sahelis as $samhu_saheli)
 								@if(issset($shg->samhu_saheli_id))
 									<option value="{{$samhu_saheli->id}}" {{($shg->samhu_saheli_id == $samhu_saheli->id) ? 'selected="selected"' : ''}} >{{$samhu_saheli->name}} (from {{$samhu_saheli->village->name}})</option>
-									@else <option value selected disabled></option>
+									@else <option value selected disabled></option> @endif
 								@endforeach
 								</select>
 							</div>	
