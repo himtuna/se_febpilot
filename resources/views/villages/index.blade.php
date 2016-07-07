@@ -21,7 +21,7 @@
                         </thead>
                         <tbody>
                             @foreach($villages as $village)
-                            <tr>
+                            <tr id="{{$village->id}}">
                                 <td><strong>{{$village->name}}</strong> <br> <small>{{$village->distance}} km from PPES</small>
                                 <br><small>Total SHGs: {{$village->total_shgs}}</small></td>
                                 <td><a href="{{url('self-help-groups#'.$village->self_help_groups[0]->id)}}">{{$village->self_help_groups[0]->name}}</a> <br><small>SHG Coord. <a href="{{url('shg-coordinators#'.$village->shg_coordinator->id)}}">

@@ -20,11 +20,12 @@
                         </thead>
                         <tbody>
                             @foreach($shgs as $shg)
-                            <a name="{{$shg->id}}"></a>
-                            <tr>
+
+                            <tr id="{{$shg->id}}">
+                            
                                 <td>
                                     <strong>{{$shg->name}}</strong> <br> 
-                                    <a href="{{url('villages')}}">{{$shg->village->name}} Village</a> <br>
+                                    <a href="{{url('villages#'.$shg->village->id)}}">{{$shg->village->name}} Village</a> <br>
                                     <small>SHG Age: {{$shg->shg_age}}<br>
                                     Phones issued: {{$shg->phones_count}} <br>
                                     Total Active Members: {{count($shg->village->members)}}</small> 
