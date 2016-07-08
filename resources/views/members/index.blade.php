@@ -37,9 +37,9 @@
                                 </div><!-- /col-sm-1 -->
 
                                 <div class="col-sm-10">
-                                <div class="panel panel-default panel-comment">
+                                <div class="panel {{($member->samhu_saheli == 1) ? 'panel-info' : 'panel-default'}} panel-comment">
                                 <div class="panel-heading comment">
-                                <strong>{{$member->name}}</strong>
+                                <strong>{{$member->name}} {{($member->samhu_saheli == 1) ? '(Samhu Saheli)' : ''}}</strong>
                                 </div>
                                 <div class="panel-body">
                                 
@@ -48,9 +48,16 @@
                                 @else 
                                 {!!$member->feedback!!}
                                 @endif
+                                 
+                                <br><strong>Feedback on videos</strong>
+                                <ul>
+                                @foreach($member->feedbacks as $feedback)
+                                <li><a href="{{url('feedbacks/'.$feedback->id)}}"> {{$feedback->video->short_title}} : {{$feedback->video->name}} ({{$feedback->video->video_stack->short_title}})</a></li>
+                                @endforeach
+                                </ul>   
                                 
                                 </div><!-- /panel-body -->
-                                <div class="panel-footer">Village: {{$member->village->name}} 
+                                <div class="panel-footer">Village: <a href="{{url('villages/#'.$member->village->id)}}">{{$member->village->name}}</a>
                                 <a href="{{url('members/'.$member->id.'/edit')}}" class="pull-right"><i class="fa fa-pencil"></i> Edit Feedback</a>
                                 </div>
                                 </div><!-- /panel panel-default -->

@@ -23,4 +23,9 @@ class Member extends Model
      	return $this->belongsTo('App\Village');
      }
 
+     public function feedbacks()
+     {
+         return $this->hasMany('App\feedback');
+     }
+     
 }

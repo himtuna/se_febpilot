@@ -51,7 +51,10 @@
 				     	<div class="form-group form-inline">
 								<label for="economic_status" class="col-sm-2">Economic Status: </label>
 								
-								<select name="economic_status" class="form-control">								
+								<select name="economic_status" class="form-control">
+									@if($member->economic_status == NULL)
+									<option value selected disabled>--Economic Status--</option>				
+									@endif
 									<option value="High" @if($member->economic_status == 'High') 
 									selected="selected" @endif >High</option>
 									<option value="Medium" @if($member->economic_status == 'Medium') selected="selected" @endif>Medium</option>
@@ -67,6 +70,9 @@
 							<label for="caste_status" class="col-sm-2">Caste Status: </label>
 							
 							<select name="caste_status" class="form-control">
+									@if($member->caste_status == NULL)
+									<option value selected disabled>--Caste Status--</option>				
+									@endif
 								<option value="High" @if($member->caste_status == 'High') 
 								selected="selected" @endif >High</option>
 								<option value="Medium" @if($member->caste_status == 'Medium') selected="selected" @endif>Medium</option>shg

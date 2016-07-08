@@ -82,7 +82,7 @@
 							                                </div><!-- /col-sm-1 -->
 
 							                                <div class="col-sm-6">
-							                                <div class="panel panel-default panel-comment">
+							                                <div class="panel {{($feedback->member->samhu_saheli == 1) ? 'panel-info' : 'panel-default'}} panel-comment">
 							                                <div class="panel-heading comment">
 							                                <strong>{{$feedback->member->name}}</strong> <em>{{$feedback->video_liked}} this video</em>
 							                                </div>
@@ -93,7 +93,7 @@
 
 							                                
 							                                </div><!-- /panel-body -->
-							                                <div class="panel-footer">Village: {{$feedback->member->village->name}} 
+							                                <div class="panel-footer">Village:  <a href="{{url('villages/#'.$feedback->member->village->id)}}">{{$feedback->member->village->name}}</a>
 							                                <a href="{{url('feedbacks/'.$feedback->id.'/edit')}}" class="pull-right"><i class="fa fa-pencil"></i> Edit Feedback</a>
 							                                </div>
 							                                </div><!-- /panel panel-default -->

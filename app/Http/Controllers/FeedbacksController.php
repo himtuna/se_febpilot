@@ -81,6 +81,8 @@ class FeedbacksController extends Controller
     public function show($id)
     {
         //
+        $feedback = Feedback::findorfail($id);
+        return view('feedbacks.show',compact('feedback'));
     }
 
     /**
