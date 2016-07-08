@@ -76,7 +76,7 @@
 														 <div class="row">
 							                                <div class="col-sm-2">
 							                                <div class="thumbnail">
-							                                <img class="img-responsive user-photo" @if(isset($feedback->member->image)) src="{{url($feedback->member->image)}}" @else src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" @endif>
+							                                <img class="img-responsive user-photo" @if(File::isFile($feedback->member->image)) src="{{url($feedback->member->image)}}" @else src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" @endif>
 							                                <strong>{{$feedback->member->name}}</strong>
 							                                </div><!-- /thumbnail -->
 							                                </div><!-- /col-sm-1 -->

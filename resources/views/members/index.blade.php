@@ -31,7 +31,7 @@
                                 <div class="row">
                                 <div class="col-sm-2">
                                 <div class="thumbnail">
-                                <img class="img-responsive user-photo" @if(isset($member->image)) src="{{url($member->image)}}" @else src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" @endif>
+                                <img class="img-responsive user-photo" @if(File::isFile($member->image)) src="{{url($member->image)}}" @else src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" @endif>
                                 <strong>{{$member->name}}</strong>
                                 </div><!-- /thumbnail -->
                                 </div><!-- /col-sm-1 -->

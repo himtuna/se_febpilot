@@ -50,6 +50,10 @@
             border-right-color:#ddd;
             border-width:8px;
         }
+        blockquote>p {
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-style: italic;
+        }
     </style>
 </head>
 <body id="app-layout">

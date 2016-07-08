@@ -56,7 +56,19 @@
                                 @else 
                                 {!!$video->feedback!!}
                                 @endif
-                                
+                                @if(count($video->feedbacks))
+                                <a href="#video{{$video->id}}-womenfeedback" data-toggle="collapse"><strong>Individual Feedbacks on this video <i class="fa fa-arrow-down"></i> </strong></a>
+                                <div id="video{{$video->id}}-womenfeedback" class="collapse">
+                                    <ul>
+
+                                    @foreach($video->feedbacks as $feedback)
+                                        <li>
+                                            <a href="{{url('feedbacks/'.$feedback->id)}}">{{$feedback->member->name}} <i class="fa fa-link"></i></a> 
+                                        </li>
+                                    @endforeach
+                                    </ul>
+                                </div>
+                                @endif
                                 </div><!-- /panel-body -->
                                 <div class="panel-footer"> Rating: {{$video->liked}}
                                 <a href="{{url('videos/'.$video->id.'/edit')}}" class="pull-right"><i class="fa fa-pencil"></i> Edit Feedback</a>
