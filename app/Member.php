@@ -25,7 +25,7 @@ class Member extends Model
 
      public function feedbacks()
      {
-         return $this->hasMany('App\feedback');
+         return $this->hasMany('App\Feedback');
      }
      
 }
