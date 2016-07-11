@@ -42,19 +42,63 @@
                                 <strong>{{$member->name}} {{($member->samhu_saheli == 1) ? '(Samhu Saheli)' : ''}}</strong>
                                 </div>
                                 <div class="panel-body">
-                                
+                                @if($member->profile !="")
+                                    <div class="bs-callout bs-callout-info">
+                                    <h4 class="feedback-heading">Profile</h4>
+                                    {!!$member->profile!!}
+                                    </div>
+                                @endif
                                 @if($member->feedback == NULL)
                                 <div class="alert alert-info"><p><strong>No Record Found!</strong> Feedback not available!</p></div>
                                 @else 
-                                {!!$member->feedback!!}
+                                <!-- <h4 class="feedback-heading">Feedback</h4> -->
+                                <div class="bs-callout bs-callout-info">
+                                <h4>Feedback</h4>
+                                {!!$member->feedback!!}    
+                                </div>
+                                
                                 @endif
-                                 
-                                <br><strong>Feedback on videos</strong>
+                                
+                                @if(count($member->feedbacks))
+                                <div class="bs-callout bs-callout-info">
+                                <h4>Feedback on Videos</h4>
                                 <ul>
                                 @foreach($member->feedbacks as $feedback)
-                                <li><a href="{{url('feedbacks/'.$feedback->id)}}"> {{$feedback->video->short_title}} : {{$feedback->video->name}} ({{$feedback->video->video_stack->short_title}})</a></li>
+                                <li><a href="{{url('feedbacks/'.$feedback->id)}}"> {{$feedback->video->short_title}} : {{$feedback->video->name}} ({{$feedback->video->video_stack->short_title}})</a> - {!!$feedback->detail !!}</li>
                                 @endforeach
-                                </ul>   
+                                </ul>
+                                </div>
+                                @endif 
+
+                                <div class="bs-callout bs-callout-info">
+                                <h4>Tech Feedback</h4>
+                                Feedback on Tech
+                                </div>
+
+                                @if($member->success_story!="")
+                                <div class="bs-callout bs-callout-warning">
+                                <h4>Impact Story</h4>
+                                {!! $member->success_story !!}
+                                </div>
+                                @endif
+                                <div class="row" style="margin-left:8px; margin-right:8px">
+
+                                <div class="bs-callout col-sm-6 feedback-before">
+                                <h4>Before</h4>
+                                Before
+                                </div>
+                                <div class="clear-fix"></div>
+                                <div class="bs-callout col-sm-6 feedback-after">
+                                <h4>After</h4>
+                                After
+                                </div>
+                                    
+                                </div>
+
+                                <div class="bs-callout bs-callout-info">
+                                <h4>Feedback Recordings</h4>
+                                Dropbox video links
+                                </div>
                                 
                                 </div><!-- /panel-body -->
                                 <div class="panel-footer">Village: <a href="{{url('villages/#'.$member->village->id)}}">{{$member->village->name}}</a>

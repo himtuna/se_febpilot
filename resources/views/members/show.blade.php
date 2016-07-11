@@ -20,8 +20,9 @@
 					<div class="tab-content">
 					    <div id="menu1" class="tab-pane fade in active">
 					    	
-						    Name: {{$member->name}} <br>
-						    Village: {{$member->village->name}}
+						    <strong>Name: </strong>{{$member->name}} <br>
+						    <strong>Village: </strong>{{$member->village->name}} <br>
+						    <strong>Profile: </strong> {!! $member->profile !!}
 
 							
 							

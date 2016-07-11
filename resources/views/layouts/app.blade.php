@@ -54,6 +54,56 @@
             font-family: Georgia, "Times New Roman", Times, serif;
             font-style: italic;
         }
+        blockquote {
+          background: #f9f9f9;
+          border-left: 0px solid #ccc;
+          margin: 1.5em 10px;
+          padding: 0.5em 10px;
+          quotes: "\201C""\201D""\2018""\2019";
+        }
+        blockquote:before {
+          color: #ccc;
+          content: open-quote;
+          font-size: 4em;
+          line-height: 0.1em;
+          margin-right: 0.25em;
+          vertical-align: -0.4em;
+        }
+        blockquote p {
+          display: inline;
+        }
+
+        /*.bs-callout-info {
+            border-left-color: #1b809e;
+        }
+        .bs-callout {
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #eee;
+            border-left-width: 5px;
+            border-radius: 3px;
+        }
+        .bs-callout-info h4 {
+            color: #1b809e;
+        }
+        .bs-callout h4 {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .bs-callout p:last-child {
+            margin-bottom: 0;
+        }*/
+        .bs-callout{padding:20px;margin:20px 0;border:1px solid #eee;border-left-width:5px;border-radius:3px}.bs-callout h4{margin-top:0;margin-bottom:5px}.bs-callout p:last-child{margin-bottom:0}.bs-callout code{border-radius:3px}.bs-callout+.bs-callout{margin-top:-5px}.bs-callout-danger{border-left-color:#ce4844}.bs-callout-danger h4{color:#ce4844}.bs-callout-warning{border-left-color:#aa6708}.bs-callout-warning h4{color:#aa6708}.bs-callout-info{border-left-color:#1b809e}.bs-callout-info h4{color:#1b809e}
+        .feedback-after {
+            border-left-width:0px;
+            border-top-width:5px;
+            border-top-color:green;
+        }
+        .feedback-before{
+            border-left-width:0px;
+            border-top-width:5px;
+            border-top-color:yellow;
+        }
     </style>
 </head>
 <body id="app-layout">
@@ -77,7 +127,10 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                
+               
+               @if (Auth::check())
+
+  
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/members') }}">SHG Women</a></li>
                 </ul>
@@ -103,6 +156,7 @@
                 </ul>
 
                 
+               @endif
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">

@@ -43,7 +43,14 @@
 								<input type="file" name="photo">
 							</div>
 							
-						</div>			
+						</div>	
+						<div class="form-group">
+							<div class="form-group">
+				    		<label for="profile">Profile and Background</label>
+				    			<textarea name="profile" id="feedback" class="ckeditor"></textarea>
+				    			<p class="help-block">Profile and Backgroun of SHG Member</p>
+				     		</div>
+						</div>
 				      
 				    </div>
 
@@ -102,12 +109,12 @@
 				    <div id="menu4" class="tab-pane fade">
 				    	<div class="form-group">
 				    		<label for="feedback">Feedback</label>
-				    			<textarea name="feedback" id="feedback"></textarea>
+				    			<textarea name="feedback" id="feedback" class="ckeditor"></textarea>
 				     	</div>
 				     	<hr>
 				     	<div class="form-group">
 				    		<label for="success_story">Success Story</label>
-				    			<textarea name="success_story" id="success_story"></textarea>
+				    			<textarea name="success_story" id="success_story" class="ckeditor"></textarea>
 				     	</div>				
 				    </div>
 
@@ -132,7 +139,6 @@
 <script>
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
-    CKEDITOR.replace( 'feedback');
-    CKEDITOR.replace( 'success_story');
+    CKEDITOR.replace('.ckeditor');    
 </script>
 @endsection

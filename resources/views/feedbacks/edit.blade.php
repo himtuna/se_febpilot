@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">        
             <div class="panel panel-default">
-                <div class="panel-heading">Create a village</div>
+                <div class="panel-heading">Edit Feedback on {{$feedback->video->short_title}} ({{$feedback->video->video_stack->short_title}}) by {{$feedback->member->name}} from {{$feedback->member->village->name}}</div>
 
                 <div class="panel-body">
 
