@@ -37,7 +37,7 @@
                                 <div class="col-sm-2">
                                 <div class="thumbnail">
                                 <img class="img-responsive user-photo" @if(File::isFile($member->image)) src="{{url($member->image)}}" @else src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" @endif>
-                                <strong>{{$member->name}}</strong>
+                                <strong>{{$member->name}}</strong> <br>
                                 <small>
                                     Age: {{$member->age}} <br>
                                     SHG: {{$member->shg_role}} <br>
