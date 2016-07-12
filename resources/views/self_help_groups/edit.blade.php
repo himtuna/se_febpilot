@@ -47,7 +47,11 @@
 								<label for="shg_age" class="col-sm-2">SHG Age: </label>
 								<input type="text" name="shg_age" class="form-control" placeholder="How old is SHG" value="{{$shg->shg_age}}">							
 							</div>
-							
+							<div class="form-group form-inline">
+								<label for="total_members" class="col-sm-2">Total SHG Members: </label>
+								<input type="number" name="total_members" class="form-control" placeholder="No. of Members" value="{{$shg->total_members}}">							
+							</div>
+										
 							<div class="form-group form-inline">
 								<label for="monthly_deposit" class="col-sm-2">Monthly Deposit: </label>
 								<input type="number" name="monthly_deposit" placeholder="Montly Deposit" class="form-control" value="{{$shg->monthly_deposit}}">

@@ -54,6 +54,11 @@
 								<label for="shg_age" class="col-sm-2">SHG Age: </label>
 								<input type="text" name="shg_age" class="form-control" placeholder="How old is SHG">		
 							</div>
+
+							<div class="form-group form-inline">
+								<label for="total_members" class="col-sm-2">Total SHG Members: </label>
+								<input type="number" name="total_members" class="form-control" placeholder="No. of Members">							
+							</div>
 							<div class="form-group form-inline">
 								<label class="col-sm-2">Is she member?:</label>
 								<div class="checkbox">

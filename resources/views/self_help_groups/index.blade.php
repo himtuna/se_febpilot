@@ -14,7 +14,7 @@
                         <thead>
                             <th>SHG Name</th>
                             <th>SHG Details</th>
-                            <th>Socio-Economic Status</th>
+                            <th>Socio-Economic Status <br><small>*pending verification</small></th>
                             <th>Member Details</th>                                                        
                             <th><i class="fa fa-cog"></i></th>
                         </thead>
@@ -28,7 +28,8 @@
                                     <a href="{{url('villages#'.$shg->village->id)}}">{{$shg->village->name}} Village</a> <br>
                                     <small>SHG Age: {{$shg->shg_age}}<br>
                                     Phones issued: {{$shg->phones_count}} <br>
-                                    Total Active Members: {{count($shg->village->members)}}</small> 
+                                    Feedbacks taken: {{count($shg->village->members)}} <br>
+                                    Total SHG members: {{$shg->total_members}}</small> 
                                 </td>
                                 <td>
                                     <small> 

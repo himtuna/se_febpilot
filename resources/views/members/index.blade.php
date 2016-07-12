@@ -37,9 +37,12 @@
                                 <div class="col-sm-2">
                                 <div class="thumbnail">
                                 <img class="img-responsive user-photo" @if(File::isFile($member->image)) src="{{url($member->image)}}" @else src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" @endif>
-                                <strong>{{$member->name}}</strong> <br>
+                                <strong>
+                                    <a href="{{url('members/'.$member->id)}}">{{$member->name}}</a>
+    
+                                </strong> <br>
                                 <small>
-                                    Age: {{$member->age}} <br>
+                                    Age: {{($member->age )}} <br>
                                     SHG: {{$member->shg_role}} <br>
                                     Education: {{$member->education}} <br>
                                     Can she write: {{($member->can_write == 1) ? 'Yes' : 'No'}}
@@ -102,6 +105,35 @@
                                     <div class="bs-callout col-sm-6 feedback-before">
                                     <h4>Before</h4>
                                     {!! $member->before_detail !!}
+                                    <br>
+                                    <ul>
+                                        <li>She could use a feature phone without assistance? 
+                                        @if($member->feature_phone_assistance  == 1 )
+                                        <span class="label label-success">Yes</span>
+                                        @else <span class="label label-warning">No</span>
+                                        @endif
+                                        </li>
+                                        <li>She could use feature phone other than for calling? 
+                                        @if($member->feature_phone_usage_noncalling  == 1 )
+                                        <span class="label label-success">Yes</span>
+                                        @else <span class="label label-warning">No</span>
+                                        @endif
+                                        </li>
+                                        <li>
+                                        She had her own feature phone?
+                                        @if($member->feature_phone_own  == 1 )
+                                        <span class="label label-success">Yes</span>
+                                        @else <span class="label label-warning">No</span>
+                                        @endif
+                                        </li>
+                                        <li>She had a smartphone at home? 
+                                        @if($member->smartphone_home  == 1 )
+                                        <span class="label label-success">Yes</span>
+                                        @else <span class="label label-warning">No</span>
+                                        @endif
+                                        </li>
+                                        
+                                    </ul>
                                     </div>
                                     <div class="clear-fix"></div>
                                     <div class="bs-callout col-sm-6 feedback-after">

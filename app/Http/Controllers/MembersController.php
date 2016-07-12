@@ -45,7 +45,8 @@ class MembersController extends Controller
         //
         $villages = Village::all();
         $education_types = Member::$education_types;
-        return view('members.create',compact('villages',"education_types"));
+        $marital_types = Member::$marital_types;
+        return view('members.create',compact('villages',"education_types","marital_types"));
     }
 
     /**
@@ -102,7 +103,8 @@ class MembersController extends Controller
         $member = Member::findorfail($id);
 
         $education_types = Member::$education_types;
-        return view('members.edit',compact('member','villages',"education_types"));
+        $marital_types = Member::$marital_types;
+        return view('members.edit',compact('member','villages',"education_types","marital_types"));
     }
 
     /**
@@ -132,6 +134,39 @@ class MembersController extends Controller
             $member->can_write = 1;
         }
         else $member->can_write = 0;
+
+
+        if($request->feature_phone == 1) {
+            $member->feature_phone = 1;
+        }
+        else $member->feature_phone = 0;
+
+        if($request->feature_phone_usage_noncalling == 1) {
+            $member->feature_phone_usage_noncalling = 1;
+        }
+        else $member->feature_phone_usage_noncalling = 0;
+
+        if($request->feature_phone_assistance == 1) {
+            $member->feature_phone_assistance = 1;
+        }
+        else $member->feature_phone_assistance = 0;
+
+        if($request->feature_phone_own == 1) {
+            $member->feature_phone_own = 1;
+        }
+        else $member->feature_phone_own = 0;
+
+
+        if($request->smartphone_home == 1) {
+            $member->smartphone_home = 1;
+        }
+        else $member->smartphone_home = 0;
+
+        if($request->television == 1) {
+            $member->television = 1;
+        }
+        else $member->television = 0;
+
 
         $member->update($request->all()); 
 
