@@ -30,6 +30,7 @@ class MembersController extends Controller
         //
         $villages = Village::all();
         $members = Member::all();
+        // $members = Member::orderBy('samhu_saheli')->get();
 
         return view('members.index',compact('villages','members'));
     }
@@ -43,7 +44,8 @@ class MembersController extends Controller
     {
         //
         $villages = Village::all();
-        return view('members.create',compact('villages'));
+        $education_types = Member::$education_types;
+        return view('members.create',compact('villages',"education_types"));
     }
 
     /**
@@ -62,6 +64,11 @@ class MembersController extends Controller
         $filename = $member->name . '.jpg';
         $image = $filepath . $filename;
         $member->image = $image;
+
+        if($request->can_write == 1 || $request->education_types != "No Education") {
+            $member->can_write = 1;
+        }
+        else $member->can_write = 0;
 
         $member->update();   
       
@@ -93,7 +100,9 @@ class MembersController extends Controller
         //
         $villages = Village::all();
         $member = Member::findorfail($id);
-        return view('members.edit',compact('member','villages'));
+
+        $education_types = Member::$education_types;
+        return view('members.edit',compact('member','villages',"education_types"));
     }
 
     /**
@@ -108,6 +117,21 @@ class MembersController extends Controller
         //
 
         $member = Member::findorfail($id);
+
+        if($request->bank_account == 1) {
+            $member->bank_account = 1;
+        }
+        else $member->bank_account = 0;
+
+        if($request->samhu_saheli == 1) {
+            $member->samhu_saheli = 1;
+        }
+        else $member->samhu_saheli = 0;
+
+        if($request->can_write == 1 || $request->education_types != "No Education") {
+            $member->can_write = 1;
+        }
+        else $member->can_write = 0;
 
         $member->update($request->all()); 
 

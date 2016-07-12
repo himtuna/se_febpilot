@@ -105,6 +105,7 @@
             border-top-color:yellow;
         }
     </style>
+    @yield('head')
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">

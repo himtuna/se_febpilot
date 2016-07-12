@@ -22,6 +22,8 @@
 					    	
 						    <strong>Name: </strong>{{$member->name}} <br>
 						    <strong>Village: </strong>{{$member->village->name}} <br>
+						    <strong>Age: </strong>{{$member->age}} <br>
+						    <strong>Religion: </strong>{{$member->religion}} <br>
 						    <strong>Profile: </strong> {!! $member->profile !!}
 
 							
@@ -34,24 +36,50 @@
 					    	<hr>
 
 					    	Caste Status: <span class="label {{($member->caste_status == 'High') ? 'label-success' : ''}} {{($member->caste_status == 'Medium') ? 'label-info' : ''}} {{($member->caste_status == 'Low') ? 'label-warning' : ''}}">{{$member->caste_status}}</span> <br>
-					    	Details: {{$member->caste_status_detail}}
+					    	Details: {{$member->caste_status_detail}} <hr>
+					    	
+					    	<strong>Samhu Saheli: </strong> {{($member->samhu_saheli == 1) ? 'Yes' : 'No'}} <br>
+					    	<strong>Bank Account: </strong> {{($member->bank_account == 1) ? 'Yes' : 'No'}}
+					    	
 					     </div>
 					    
 					    <div id="menu3" class="tab-pane fade">
+							
+							<strong>House Type: </strong> {{$member->house_type}} <br>
+							<strong>Education: </strong> {{$member->education}} <br>
+							<strong>Can write: </strong> {{($member->can_write == 1) ? 'Yes' : 'No'}} <br>
+							<strong>Travelled Outside: </strong> {{$member->travel_outside}} <br>
+							<strong>Children: </strong> {{$member->children}} <br>
+							<strong>Family Members: </strong> {{$member->family_members}} <br>
 
-		
 					
 					    </div>
 					    <div id="menu4" class="tab-pane fade">
 					    	
 					    		<label for="feedback">Feedback:</label>
 					    			{!!$member->feedback!!}
-					     	
 					     		<hr>
-					     	
 					    		<label for="success_story">Success Story: </label>
 					    			{!!$member->success_story!!}
-					     				
+				    			<hr>
+					     		<label for="feedback_videos_detail">Feedback on videos: </label>
+					     			{!! $member->feedback_videos_detail !!}
+					     		<hr>		
+				     			<label for="feedback_tech_detail">Feedback on Technology: </label>
+					     			{!! $member->feedback_tech_detail !!}
+				     			<div class="row" style="margin-left:8px; margin-right:8px">
+
+                                    <div class="bs-callout col-sm-6 feedback-before">
+                                    <h4>Before</h4>
+                                    {!! $member->before_detail !!}
+                                    </div>
+                                    <div class="clear-fix"></div>
+                                    <div class="bs-callout col-sm-6 feedback-after">
+                                    <h4>After</h4>
+                                    {!! $member->after_detail !!}
+                                    </div>
+                                    
+                                </div>
 				    	</div>
 
 			    	</div><!-- tab Content -->

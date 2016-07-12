@@ -43,7 +43,25 @@
 							<div class="form-control">
 								<input type="file" name="photo">
 							</div>							
-						</div>				
+						</div>
+						<div class="form-group form-inline">
+							<label for="age" class="col-sm-2">Age: </label>							
+								<input type="number" name="age" value="{{$member->age}}" class="form-control">	
+						</div>
+						<div class="form-group form-inline">
+							<label class="col-sm-2">Religion:</label>
+							<select name="religion" class="form-control">
+							@if($member->religion == NULL)
+								<option value selected disabled>--Religion--</option>
+							@endif
+								<option value="Hindu"{{($member->religion == "Hindu" ? 'selected=selected' : '')}}>Hindu</option>
+								<option value="Muslim" {{($member->religion == "Muslim" ? 'selected=selected' : '')}}>Muslim</option>
+								<option value="Sikh" {{($member->religion == "Sikh" ? 'selected=selected' : '')}}>Sikh</option>
+								<option value="Christian" {{($member->religion == "Christian" ? 'selected=selected' : '')}}>Christian</option>
+								<option value="Other" {{($member->religion == "Other" ? 'selected=selected' : '')}}>Other</option>
+							</select>							
+						</div>
+						<hr>	
 				      	<div class="form-group">
 							<div class="form-group">
 				    		<label for="profile">Profile and Background</label>
@@ -102,9 +120,63 @@
 								<input type="checkbox" name="bank_account" value="1" {{($member->bank_account==1) ? 'checked="checked"' : '' }}> if Woman has a bank account?
 							</div>
 						</div>
+						<div class="form-group form-inline">
+							<label class="col-sm-2">SHG Role:</label>
+							<select name="shg_role" class="form-control">
+							@if($member->shg_role == NULL)
+								<option value selected disabled>--Role in SHG--</option>
+							@endif
+								<option value="Member" {{($member->shg_role == 'Member') ? 'selected=selected': ''}}>Member</option>
+								<option value="President" {{($member->shg_role == 'President') ? 'selected=selected': ''}}>President</option>
+								<option value="Vice-President" {{($member->shg_role == 'Vice-President') ? 'selected=selected': ''}}>Vice-President</option>
+								<option value="Treasurer" {{($member->shg_role == 'Treasurer') ? 'selected=selected': ''}}>Treasurer</option>
+							
+							</select>							
+						</div>	
 				    </div>
 				    
 				    <div id="menu3" class="tab-pane fade">
+						<div class="form-group form-inline">
+							<label for="house_type" class="col-sm-2">House Type: </label>
+							<input type="text" name="house_type" value="{{$member->house_type}}" class="form-control">
+						</div>
+						<div class="form-group form-inline">
+						<label for="education" class="col-sm-2">Education: </label>
+
+							<select name="education" class="form-control">
+								@if($member->education == NULL)
+								<option value selected disabled>--Education--</option>
+								@endif
+								@foreach($education_types as $education_type)
+								<option value="{{$education_type}}" {{($member->education ==  $education_type) ? 'selected=selected' : ''}}>{{$education_type}}</option>
+								@endforeach								
+							</select>
+						</div>
+
+						<div class="form-group form-inline">
+							<label class="col-sm-2">Can she write:</label>
+							<div class="checkbox">
+								<input type="checkbox" name="can_write" value="1" {{($member->can_write==1) ? 'checked="checked"' : '' }}> can she write?
+							</div>
+						</div>
+
+						<div class="form-group form-inline">
+							<label for="travel_outside" class="col-sm-2">Travelled Outside: </label>
+							<textarea name="travel_outside" class="form-control">{{$member->travel_outside}}</textarea>
+							<div class="help-block">Has she travelled outside Anupshahr?</div>
+						</div>
+						<div class="form-group form-inline">
+							<label for="children" class="col-sm-2">Children: </label>
+							<input type="number" name="children" placeholder="No. of Children" value="{{$member->children}}" class="form-control">							
+						</div>
+						<div class="form-group form-inline">
+							<label for="family_members" class="col-sm-2">Family Members: </label>
+							<textarea name="family_members" placeholder="About family members" class="form-control">{{$member->family_members}}</textarea>
+						</div>
+						<div class="form-group form-inline">
+							<label for="shg_value" class="col-sm-2">SHG Value for her: </label>
+							<textarea name="shg_value" placeholder="SHG Value for her" class="form-control">{{$member->shg_value}}</textarea>
+						</div>
 
 	
 				
@@ -118,6 +190,33 @@
 				     	<div class="form-group">
 				    		<label for="success_story">Success Story</label>
 				    			<textarea name="success_story" id="success_story" class="ckeditor">{{$member->success_story}}</textarea>
+				     	</div>
+				     	<div class="form-group">
+				    		<label for="feedback_videos_detail">Feedback on Videos</label>
+				    			<textarea name="feedback_videos_detail"  id="feedback_videos_detail" class="ckeditor">{{$member->feedback_videos_detail}}</textarea>
+				    			<p class="help-block">Enter general feedback on videos woman watched</p>
+				     	</div>
+				     	<div class="form-group">
+				    		<label for="feedback_tech_detail">Feedback on Technology</label>
+				    			<textarea name="feedback_tech_detail"  id="feedback_tech_detail" class="ckeditor">{{$member->feedback_tech_detail}}</textarea>
+				    			<p class="help-block">Enter general feedback on Technology, smartphones, etc.</p>
+				     	</div>
+				     	<hr>
+				     	<div class="form-group">
+				    		<label for="before_detail">Before</label>
+				    			<textarea name="before_detail"  id="before_detail" class="ckeditor">{{$member->before_detail}}</textarea>
+				    			<p class="help-block">About woman before we started our project</p>
+				     	</div>
+				     	<div class="form-group">
+				    		<label for="after_detail">After</label>
+				    			<textarea name="after_detail"  id="after_detail" class="ckeditor">{{$member->after_detail}}</textarea>
+				    			<p class="help-block">Changes in woman's attitude, behaviour, impact of our programme.</p>
+				     	</div>	
+				     	<hr>
+				     	 <div class="form-group form-inline">
+				     		<label for="feedback_recordings">Feedback Recordings</label>
+				     		<input type="text" name="feedback_recordings" value="{{$member->feedback_recordings}}" class="form-control">
+				     		<p class="help-block">Please enter the dropbox video url separated by comma.</p>
 				     	</div>				
 				    </div>
 

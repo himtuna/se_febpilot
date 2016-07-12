@@ -27,5 +27,9 @@ protected $guarded = ['id'];
      {
          return $this->hasMany('App\Feedback');
      }
+
+     // public static $education_types = ["No Education" => "No Education","Primary" => "Primary","2nd Class" => "2nd Class","5th Class" => "5th Class","8th Class" => "8th Class","10th Class" => "10th Class","12th Class" => "12th Class","Graduate" => "Graduate","Post-graduate" => "Post-graduate",];
+
+     public static $education_types = ['No Education','Primary','2nd Class','5th Class','8th Class','10th Class','12th Class','Graduate','Post-graduate'];
      
 }
