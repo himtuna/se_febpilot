@@ -64,7 +64,7 @@
 							<strong>Family Profession: </strong> {{$member->family_profession}} <br>
 							<hr>
 							<h4>Technology</h4>
-							<strong>Feature at home: </strong> {{($member->feature_phone_home == 1) ? 'Yes' : 'No'}} <br>
+							<strong>Feature at home: </strong> {{($member->feature_phone == 1) ? 'Yes' : 'No'}} <br>
 							<strong>Feature phone usage: </strong> {{$member->feature_phone_usage}} <br>
 							<strong>Feature phone for non-calling: </strong> {{($member->feature_phone_usage_noncalling == 1) ? 'Yes' : 'No'}} <br>
 							<strong>Feature phone usage without assistance: </strong> {{($member->feature_phone_assistance == 1) ? 'Yes' : 'No'}} <br>

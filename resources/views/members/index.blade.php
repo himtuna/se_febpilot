@@ -42,9 +42,10 @@
     
                                 </strong> <br>
                                 <small>
-                                    Age: {{($member->age )}} <br>
+                                    Age: {{($member->age )}} years<br>
                                     SHG: {{$member->shg_role}} <br>
                                     Education: {{$member->education}} <br>
+                                    Marital Status: {{$member->marital_status}} <br>
                                     Can she write: {{($member->can_write == 1) ? 'Yes' : 'No'}}
                                 </small>
                                 </div><!-- /thumbnail -->
