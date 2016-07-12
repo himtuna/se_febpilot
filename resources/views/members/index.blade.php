@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="panel-body">
                                 @if($member->profile !="")
-                                    <div class="bs-callout bs-callout-info">
+                                    <div class="bs-callout">
                                     <h4 class="feedback-heading">Profile</h4>
                                     {!!$member->profile!!}
                                     </div>
@@ -63,7 +63,7 @@
                                 <div class="alert alert-info"><p><strong>No Record Found!</strong> Feedback not available!</p></div>
                                 @else 
                                 <!-- <h4 class="feedback-heading">Feedback</h4> -->
-                                <div class="bs-callout bs-callout-info">
+                                <div class="bs-callout bs-callout-feedback">
                                 <h4>Feedback</h4>
                                 {!!$member->feedback!!}    
                                 </div>
@@ -71,7 +71,7 @@
                                 @endif
                                 
                                 @if(count($member->feedbacks) || $member->feedback_videos_detail !=NULL)
-                                <div class="bs-callout bs-callout-info">
+                                <div class="bs-callout bs-callout-danger">
                                 <h4>Feedback on Videos</h4>
                                 {!! $member->feedback_videos_detail !!}
                                 <ul>
@@ -83,14 +83,14 @@
                                 @endif 
                                 
                                 @if($member->feedback_tech_detail !="")
-                                <div class="bs-callout bs-callout-info">
+                                <div class="bs-callout bs-callout-tech">
                                 <h4>Tech Feedback</h4>
                                 {!! $member->feedback_tech_detail !!}
                                 </div>
                                 @endif
 
                                 @if($member->success_story!="")
-                                <div class="bs-callout bs-callout-warning">
+                                <div class="bs-callout bs-callout-success">
                                 <h4>Impact Story</h4>
                                 {!! $member->success_story !!}
                                 </div>
@@ -113,7 +113,7 @@
                                 @endif
 
                                 @if($member->feedback_recordings)    
-                                <div class="bs-callout bs-callout-info">
+                                <div class="bs-callout bs-callout-feedback">
                                     <h4>Feedback Recordings</h4>
                                     @foreach (explode(', ', $member->feedback_recordings) as $feedback_recording)
                                           <video id="my-video" class="video-js" controls preload="none" width="640" height="264" data-setup="{}">

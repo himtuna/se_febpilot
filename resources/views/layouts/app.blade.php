@@ -93,7 +93,7 @@
         .bs-callout p:last-child {
             margin-bottom: 0;
         }*/
-        .bs-callout{padding:20px;margin:20px 0;border:1px solid #eee;border-left-width:5px;border-radius:3px}.bs-callout h4{margin-top:0;margin-bottom:5px}.bs-callout p:last-child{margin-bottom:0}.bs-callout code{border-radius:3px}.bs-callout+.bs-callout{margin-top:-5px}.bs-callout-danger{border-left-color:#ce4844}.bs-callout-danger h4{color:#ce4844}.bs-callout-warning{border-left-color:#aa6708}.bs-callout-warning h4{color:#aa6708}.bs-callout-info{border-left-color:#1b809e}.bs-callout-info h4{color:#1b809e}
+        .bs-callout{padding:20px;margin:20px 0;border:1px solid #eee;border-left-width:5px;border-radius:3px}.bs-callout h4{margin-top:0;margin-bottom:5px}.bs-callout p:last-child{margin-bottom:0}.bs-callout code{border-radius:3px}.bs-callout+.bs-callout{margin-top:-5px}.bs-callout-danger{border-left-color:#ce4844}.bs-callout-danger h4{color:#ce4844}.bs-callout-success{border-left-color:#aa6708}.bs-callout-success h4{color:#aa6708}.bs-callout-feedback{border-left-color:#1b809e}.bs-callout-feedback h4{color:#1b809e}.bs-callout-tech{border-left-color:#1b9e8c}.bs-callout-tech h4{color:#1b9e8c}
         .feedback-after {
             border-left-width:0px;
             border-top-width:5px;
