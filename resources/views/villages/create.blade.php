@@ -15,6 +15,14 @@
 							<input type="text" name="name" placeholder="Village Name" class="form-control">
 						</div>
 						<div class="form-group form-inline">
+							<label for="profile" class="col-sm-2">Village Profile: </label>
+							<textarea name="profile" class="form-control" id="profile"></textarea>
+						</div>
+						<div class="form-group form-inline">
+							<label for="education" class="col-sm-2">Education Level in village: </label>
+							<textarea name="education" class="form-control" id="education"></textarea>
+						</div>
+						<div class="form-group form-inline">
 							<label for="shg_coordinator" class="col-sm-2">SHG Coordinator: </label>
 							
 							<select name="shg_coordinator_id" class="form-control">

@@ -197,10 +197,25 @@
 
 						<h4>Family Details</h4>
 						<div class="form-group form-inline">
+							<label for="family_profile" class="col-sm-2">Family Profile: </label>
+							<textarea name="family_profile" placeholder="Family Profile" class="form-control">{{$member->family_profile}}</textarea>
+						</div>
+						<div class="form-group form-inline">
+							<label for="family_education" class="col-sm-2">Family Education Level: </label>
+							<textarea name="family_education" placeholder="About family education level" class="form-control">{{$member->family_education}}</textarea>
+						</div>
+						<div class="form-group form-inline">
+							<label for="family_members" class="col-sm-2">Family Members: </label>
+							<textarea name="family_members" placeholder="About family members" class="form-control">{{$member->family_members}}</textarea>
+						</div>
+						<div class="form-group form-inline">
+							<label for="family_profession" class="col-sm-2">Family Profession: </label>
+							<textarea name="family_profession" placeholder="About family professions" class="form-control">{!! $member->family_profession !!}</textarea>
+						</div>
+						<div class="form-group form-inline">
 							<label for="house_type" class="col-sm-2">House Type: </label>
 							<input type="text" name="house_type" value="{{$member->house_type}}" class="form-control">
 						</div>
-
 						<div class="form-group form-inline">
 							<label class="col-sm-2">Television at Home:</label>
 							<div class="checkbox">
@@ -211,17 +226,7 @@
 							<label for="tv_programs" class="col-sm-2">TV Programs: </label>
 							<textarea name="tv_programs" class="form-control" id="tv_programs">{!! $member->tv_programs!!}</textarea>
 						</div>
-
-						<div class="form-group form-inline">
-							<label for="family_members" class="col-sm-2">Family Members: </label>
-							<textarea name="family_members" placeholder="About family members" class="form-control">{{$member->family_members}}</textarea>
-						</div>
 						
-
-						<div class="form-group form-inline">
-							<label for="family_profession" class="col-sm-2">Family Profession: </label>
-							<textarea name="family_profession" placeholder="About family professions" class="form-control">{!! $member->family_profession !!}</textarea>
-						</div>
 						<h4>Technology</h4>
 						<div class="form-group form-inline">
 							<label class="col-sm-3">Feature phone:</label>

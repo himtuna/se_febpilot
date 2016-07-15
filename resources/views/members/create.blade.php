@@ -181,6 +181,18 @@
 						<hr>
 						<h4>Family Details</h4>
 						<div class="form-group form-inline">
+							<label for="family_profile" class="col-sm-2">Family Profile: </label>
+							<textarea name="family_profile" placeholder="Family Profile" class="form-control"></textarea>
+						</div>
+						<div class="form-group form-inline">
+							<label for="family_members" class="col-sm-2">Family Members: </label>
+							<textarea name="family_members" placeholder="About family members" class="form-control"></textarea>
+						</div>
+						<div class="form-group form-inline">
+							<label for="family_education" class="col-sm-2">Family Education Level: </label>
+							<textarea name="family_education" placeholder="About family education level" class="form-control"></textarea>
+						</div>
+						<div class="form-group form-inline">
 							<label for="house_type" class="col-sm-2">House Type: </label>
 							<input type="text" name="house_type" placeholder="House Type" class="form-control">
 						</div>
@@ -196,10 +208,7 @@
 							<p class="help-block">TV Programs she likes to watch</p>
 						</div>
 						
-						<div class="form-group form-inline">
-							<label for="family_members" class="col-sm-2">Family Members: </label>
-							<textarea name="family_members" placeholder="About family members" class="form-control"></textarea>
-						</div>
+						
 
 						<div class="form-group form-inline">
 							<label for="family_profession" class="col-sm-2">Family Profession: </label>

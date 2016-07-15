@@ -63,7 +63,7 @@
 
                                     @foreach($video->feedbacks as $feedback)
                                         <li>
-                                            <a href="{{url('feedbacks/'.$feedback->id)}}">{{$feedback->member->name}} <i class="fa fa-link"></i></a> 
+                                            <a href="{{url('feedbacks/'.$feedback->id)}}">{{$feedback->member->name}} ({{$feedback->member->village->name}}) <i class="fa fa-link"></i></a> - {!!$feedback->detail!!}
                                         </li>
                                     @endforeach
                                     </ul>

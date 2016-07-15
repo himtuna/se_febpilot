@@ -60,7 +60,10 @@
 							<h4>Family Details</h4>
 							<strong>House Type: </strong> {{$member->house_type}} <br>
 							<strong>TV at home: </strong> {{($member->television == 1) ? 'Yes' : 'No'}} <br>
+							<strong>TV Programmes she likes: </strong> {{ $member->tv_programs}}
+							<strong>Family Profile: </strong> {{$member->family_profile}} <br>
 							<strong>Family Members: </strong> {{$member->family_members}} <br>
+							<strong>Family Education: </strong> {{$member->family_education}} <br>
 							<strong>Family Profession: </strong> {{$member->family_profession}} <br>
 							<hr>
 							<h4>Technology</h4>

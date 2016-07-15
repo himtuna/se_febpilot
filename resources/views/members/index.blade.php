@@ -61,6 +61,64 @@
                                     <div class="bs-callout">
                                     <h4 class="feedback-heading">Profile</h4>
                                     {!!$member->profile!!}
+                                    <a href="#member-details-{{$member->id}}-" data-toggle="collapse"><strong>More Details<i class="fa fa-arrow-down"></i> </strong></a> 
+                                    <div id="member-details-{{$member->id}}-" class="collapse">
+                                    <hr>
+                                    <strong>Personal Information</strong>
+                                    <ul>
+                                    <li><strong>Name: </strong>{{$member->name}}</li>
+                                    <li><strong>Age: </strong>{{$member->age}}</li>
+                                    <li><strong>Education: </strong> {{$member->education}}</li>
+                                    <li><strong>Marital Status: </strong>{{$member->marital_status}}</li>
+                                    <li><strong>Children: </strong> {{$member->children}}</li>
+                                    <li><strong>Profession/Econonmic Status: </strong> {!! $member->profession !!}</li>
+                                    <li><strong>Personal Bank Account: </strong> {{($member->bank_account == 1) ? 'Yes' : 'No'}}</li>
+                                    <li><strong>SHG value for her: </strong> {!! $member->shg_value !!}</li>
+                                    <li><strong>Has she travelled outside Anupshahr: </strong> {{$member->travel_outside}}</li>
+
+                                    
+                                    </ul>
+                                    <strong>Family Background</strong>
+                                        <ul>
+                                        <li><strong>Family Profile: </strong> {{$member->family_profile}}</li>
+                                        <li><strong>Family Members: </strong> {{$member->family_members}}
+                                        </li>
+                                        <li><strong>Family Education Level: </strong> {{$member->family_education}}</li>
+                                        <li><strong>Family Profession: </strong> {{$member->family_profession}} <br></li>
+                                            <li><strong>Economic Status:</strong> <span class="label {{($member->economic_status == 'High') ? 'label-success' : ''}} {{($member->economic_status == 'Medium') ? 'label-info' : ''}} {{($member->economic_status == 'Low') ? 'label-warning' : ''}}">{{$member->economic_status}}</span><br>
+                                            {{$member->economic_status_details}}
+                                            </li>
+                                        
+                                        
+                                        
+                                        <li><strong>House Type: </strong> {{$member->house_type}}</li>
+                                        <li><strong>TV at home: </strong> {{($member->television == 1) ? 'Yes' : 'No'}}</li>
+                                        <li><strong>TV Programs she like: </strong> {{($member->tv_programs)}}</li>
+                                        </ul>
+                                    <strong>Technology Orientation</strong>
+                                    <br><small>Note: Survey done before our Pilot</small>
+                                    <ul>
+                                        <li><strong>She has feature phone at home: </strong> {{($member->feature_phone == 1) ? 'Yes' : 'No'}}</li>
+                                        <li><strong>Does she use the feature phone: </strong> {{$member->feature_phone_usage}}</li>
+                                        <li><strong>Does she use it for non-calling purpose: </strong> {{($member->feature_phone_usage_noncalling == 1) ? 'Yes' : 'No'}}</li>
+                                        <li><strong> Can she use it without assistance: </strong> {{($member->feature_phone_assistance == 1) ? 'Yes' : 'No'}}</li>
+                                        <li><strong>She has her own feature phone: </strong> {{($member->feature_phone_own == 1) ? 'Yes' : 'No'}}</li>
+                                        <li><strong>She has Smartphone at home: </strong> {{($member->smartphone_home == 1) ? 'Yes' : 'No'}} </li>
+                                        <li><strong>Does she use smartphone on her own: </strong> {{$member->smartphone_home_usage}}</li>
+                                    </ul>
+                                    <strong>Village Background</strong>
+                                        <ul>
+                                        <li><strong>Profile: </strong>{{$village->profile}}</li>
+                                        <li><strong>Education Level in village: </strong>{{$village->education}}</li>
+                                            <li><strong>Economic Status:</strong> <span class="label {{($village->economic_status == 'High') ? 'label-success' : ''}} {{($village->economic_status == 'Medium') ? 'label-info' : ''}} {{($village->economic_status == 'Low') ? 'label-warning' : ''}}">{{$village->economic_status}}</span><br>
+                                            {{$village->economic_status_details}}
+                                            </li>
+                                        <li><strong>Caste Status: </strong> <span class="label {{($village->caste_status == 'High') ? 'label-success' : ''}} {{($village->caste_status == 'Medium') ? 'label-info' : ''}} {{($village->caste_status == 'Low') ? 'label-warning' : ''}}">{{$village->caste_status}}</span> <br>{{$village->caste_status_detail}} </li>
+                                        <li><strong>Distance from PPES:</strong> {{$village->distance}} km</li>
+                                        
+                                        </ul>
+                                    </div>
+
                                     </div>
                                 @endif
                                 @if($member->feedback == NULL)

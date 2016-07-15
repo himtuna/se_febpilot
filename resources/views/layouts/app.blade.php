@@ -105,9 +105,10 @@
             border-top-color:yellow;
         }
     </style>
-    @yield('head')
+@yield('head')
 </head>
 <body id="app-layout">
+<!-- <div class="alert alert-info alert-dismissable page-alert text-center">Localhost</div> -->
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
