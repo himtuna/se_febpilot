@@ -25,7 +25,7 @@
                                 <td><strong>{{$village->name}}</strong> <br> <small>{{$village->distance}} km from PPES</small>
                                 <br><small>Total SHGs: {{$village->total_shgs}}</small> <br>
                                  <!-- more details start -->
-                                 <a href="#" type="button" class="" data-toggle="modal" data-target="#village-{{$village->id}}-details"><small>more details</small></a>
+                                 <a href="#" type="button" class="" data-toggle="modal" data-target="#village-{{$village->id}}-details"><small>more details <i class="fa fa-link"></i></small></a>
 
                                     <!-- Modal -->
                                     <div id="village-{{$village->id}}-details" class="modal fade" role="dialog">

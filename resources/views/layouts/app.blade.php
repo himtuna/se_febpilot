@@ -8,6 +8,7 @@
 
     <title>Social Emergence | Feedback Dashboard</title>
 
+    
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
@@ -16,6 +17,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
+    
+    @if(!(Request::is('*/create') || Request::is('*/edit')))
+    <!-- Material Design fonts -->
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Bootstrap Material Design -->
+  <link rel="stylesheet" type="text/css" href="{!!asset('css/bootstrap-material-design.css')!!}">
+  <link rel="stylesheet" type="text/css" href="{!!asset('css/ripples.min.css')!!}">
+    @endif
     <style>
         body {
             font-family: 'Lato';
@@ -50,6 +61,23 @@
             border-right-color:#ddd;
             border-width:8px;
         }
+        .panel-primary>.comment:after, .panel-primary>.comment:before {
+            border-right-color:#009688;
+        }
+        .panel-info>.comment:after, .panel-info>.comment:before {
+            border-right-color:#03a9f4;
+        }
+        .panel-warning>.comment:after, .panel-warning>.comment:before {
+            border-right-color:#ff5722;
+        }
+        .panel-success>.comment:after, .panel-success>.comment:before {
+            border-right-color:#4caf50;
+        }
+        .panel-danger>.comment:after, .panel-danger>.comment:before {
+            border-right-color:#f44336;
+        }
+
+        
         blockquote>p {
             font-family: Georgia, "Times New Roman", Times, serif;
             font-style: italic;
@@ -73,26 +101,6 @@
           display: inline;
         }
 
-        /*.bs-callout-info {
-            border-left-color: #1b809e;
-        }
-        .bs-callout {
-            padding: 20px;
-            margin: 20px 0;
-            border: 1px solid #eee;
-            border-left-width: 5px;
-            border-radius: 3px;
-        }
-        .bs-callout-info h4 {
-            color: #1b809e;
-        }
-        .bs-callout h4 {
-            margin-top: 0;
-            margin-bottom: 5px;
-        }
-        .bs-callout p:last-child {
-            margin-bottom: 0;
-        }*/
         .bs-callout{padding:20px;margin:20px 0;border:1px solid #eee;border-left-width:5px;border-radius:3px}.bs-callout h4{margin-top:0;margin-bottom:5px}.bs-callout p:last-child{margin-bottom:0}.bs-callout code{border-radius:3px}.bs-callout+.bs-callout{margin-top:-5px}.bs-callout-danger{border-left-color:#ce4844}.bs-callout-danger h4{color:#ce4844}.bs-callout-success{border-left-color:#aa6708}.bs-callout-success h4{color:#aa6708}.bs-callout-feedback{border-left-color:#1b809e}.bs-callout-feedback h4{color:#1b809e}.bs-callout-tech{border-left-color:#1b9e8c}.bs-callout-tech h4{color:#1b9e8c}
         .feedback-after {
             border-left-width:0px;
@@ -103,6 +111,10 @@
             border-left-width:0px;
             border-top-width:5px;
             border-top-color:yellow;
+        }
+        .nav-tabs>li.active {
+            background: #24c2b3;
+            margin-bottom: -1px;
         }
     </style>
 @yield('head')
@@ -188,5 +200,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+@if(!(Request::is('*/create') || Request::is('*/edit')))
+    <script src="{!!asset('js/ripples.min.js')!!}"></script>
+    <script src="{!!asset('js/material.min.js')!!}"></script>   
+
+    <script>
+        $(document).ready(function() {
+            // This command is used to initialize some elements and make them work properly
+            $.material.init();
+        });
+    </script>
+@endif
+
 </body>
 </html>
