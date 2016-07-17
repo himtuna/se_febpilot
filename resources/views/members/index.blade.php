@@ -207,13 +207,13 @@
                                 <div class="bs-callout bs-callout-feedback">
                                     <h4>Feedback Recordings</h4>
                                     @foreach (explode(', ', $member->feedback_recordings) as $feedback_recording)
-                                          <div class="col-md-12">
-                                          <video id="my-video" class="video-js" controls preload="none" class="col-md-12" data-setup="{}">
-                                        <source src="{{ $feedback_recording }}" type='video/mp4'>                                     
-                                        <p class="vjs-no-js">
-                                          To view this video please enable JavaScript, and consider upgrading to a web browser that
-                                          <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                                        </p>
+                                          <div class="wrapper">
+                                          <video id="my-video" class="video-js vjs-default-skin" controls preload="none"data-setup="{}" width="auto" height="auto" >
+                                            <source src="{{ $feedback_recording }}" type='video/mp4'>                                     
+                                            <p class="vjs-no-js">
+                                              To view this video please enable JavaScript, and consider upgrading to a web browser that
+                                              <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                                            </p>
                                       </video>
                                       </div>
                                       <br>                                      

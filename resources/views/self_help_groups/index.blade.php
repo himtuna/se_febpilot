@@ -10,6 +10,7 @@
                 <div class="panel-body">
                 <a href="{{url('self-help-groups/create')}}" class="btn btn-primary pull-right">+ Self Help Group</a>
                 <div class="clear-fix"></div>
+                <div class="table-responsive">
                     <table class="table table-hover table-bordered">
                         <thead>
                             <th>SHG Name</th>
@@ -59,6 +60,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
         </div>

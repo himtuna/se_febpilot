@@ -10,6 +10,7 @@
                 <div class="panel-body">
                 <a href="{{url('villages/create')}}" class="btn btn-primary pull-right">+ Village</a>
                 <div class="clear-fix"></div>
+                <div class="table-responsive">
                     <table class="table table-hover table-bordered">
                         <thead>
                             <th>Village Name</th>
@@ -80,6 +81,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    </div>
                 </div>
             </div>
         </div>
