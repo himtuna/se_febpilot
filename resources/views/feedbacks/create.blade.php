@@ -1,10 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>
-<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
 
 
 <div class="container">
@@ -20,7 +17,7 @@
 					<div class="form-group form-inline">
 						<label for="video_stack_id" class="col-sm-2">Week: </label>
 						
-						<select name="video_stack_id" id="video_stack_id" class="form-control video_stack_id" required="required">
+						<select name="video_stack_id" id="video_stack_id" class="form-control select2" required="required">
 							<option value selected disabled>--Week--</option>
 						@foreach($videostacks as $videostack)
 							<option value="{{$videostack->id}}">{{$videostack->short_title}}: {{$videostack->name}}</option>
@@ -31,7 +28,7 @@
 					<div class="form-group form-inline">
 						<label for="video_id" class="col-sm-2">Video: </label>
 						
-						<select name="video_id" id="video_id" class="form-control video_id" required="required">
+						<select name="video_id" id="video_id" class="form-control" required="required">
 							<option value="  "></option>
 						
 						</select>
@@ -41,7 +38,7 @@
 					<div class="form-group form-inline">
 						<label for="member_id" class="col-sm-2">Woman: </label>
 						
-						<select name="member_id" id="member_id" class="form-control member_id" required="required">
+						<select name="member_id" id="member_id" class="form-control select2" required="required">
 							<option value selected disabled>--Woman--</option>
 						@foreach($members as $member)
 							<option value="{{$member->id}}">{{$member->name}} ({{$member->village->name}})</option>
@@ -66,12 +63,12 @@
 
 					<div class="form-group">
 						<label for="detail">Feedback</label>
-						<textarea name="detail" id="detail"></textarea>
+						<textarea name="detail" id="detail" class="ckeditor"></textarea>
 					</div>
 
 					<div class="form-group">
 						<label for="quote">Quote from woman</label>
-						<textarea name="quote" id="quote"></textarea>
+						<textarea name="quote" id="quote" class="ckeditor"></textarea>
 					</div>
 
 
@@ -86,17 +83,8 @@
         </div>
     </div>
 </div>
-<script>
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace('detail');
-    CKEDITOR.replace('quote');    
-</script>
-<script type="text/javascript">
-  $('.video_stack_id').select2();
-  $('.member_id').select2();
-  
-</script>
+
+
 <script>
 	$.ajaxSetup({
 	  headers: {

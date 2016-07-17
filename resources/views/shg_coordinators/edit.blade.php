@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>
-
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">        
@@ -29,7 +27,7 @@
                                 <form action="{{url('shg_coordinators/'.$shg_coordinator->id)}}" method="post">
                                 {{ method_field('PATCH') }}
                                 <div class="form-group">
-                                <textarea type="text" name="feedback" id="feedback-{{$shg_coordinator->id}}" class="form-control" >{{$shg_coordinator->feedback}}</textarea>
+                                <textarea type="text" name="feedback" class="form-control ckeditor" >{{$shg_coordinator->feedback}}</textarea>
                                 </div>
                                 <div class="form-group form-inline">
                                 	<label for="phone">Phone:</label>
@@ -56,10 +54,5 @@
         </div>
     </div>
 </div>
-<script>
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace( 'feedback-{{$shg_coordinator->id}}');
-</script>
 
 @endsection

@@ -27,12 +27,11 @@ class MembersController extends Controller
      */
     public function index()
     {
-        //
-        $villages = Village::all();
-        $members = Member::all();
-        // $members = Member::orderBy('samhu_saheli')->get();
+        
+        $villages = Village::with('members')->get();
+        
+        return view('members.index',compact('villages'));
 
-        return view('members.index',compact('villages','members'));
     }
 
     /**

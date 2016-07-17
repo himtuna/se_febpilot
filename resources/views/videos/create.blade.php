@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">        
@@ -55,12 +54,12 @@
 
 						<div class="form-group form-inline">
 							<label for="short_title">General Feedback: </label>
-							<textarea name="feedback" id="feedback" ></textarea>
+							<textarea name="feedback" id="feedback" class="ckeditor"></textarea>
 						</div>
 
 						<div class="form-group form-inline">
 							<label for="success_story">Success Story: </label>
-							<textarea name="success_story" id="success_story"></textarea>
+							<textarea name="success_story" id="success_story" class="ckeditor"></textarea>
 						</div>
 						
 
@@ -75,8 +74,5 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-CKEDITOR.replace( 'feedback');
-CKEDITOR.replace( 'success_story');
-</script>
+
 @endsection

@@ -42,7 +42,7 @@
                                 </ul>
                                 </div><!-- /panel-body -->
                                 <div class="panel-footer">Phone: {{$shg_coordinator->phone}} 
-                                <a href="{{url('shg_coordinators/'.$shg_coordinator->id.'/edit')}}" class="pull-right"><i class="fa fa-pencil"></i> Edit Feedback</a>
+                                <a href="{{url('shg-coordinators/'.$shg_coordinator->id.'/edit')}}" class="pull-right"><i class="fa fa-pencil"></i> Edit Feedback</a>
                                 </div>
                                 </div><!-- /panel panel-default -->
                                 </div><!-- /col-sm-5 -->

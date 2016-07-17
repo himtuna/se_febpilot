@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">        
@@ -329,10 +329,4 @@
         </div>
     </div>
 </div>
-<script>
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace( '.ckeditor');
-    
-</script>
 @endsection

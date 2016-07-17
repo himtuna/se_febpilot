@@ -22,7 +22,7 @@ class Village extends Model
 
      public function members()
      {
-          return $this->hasMany('App\Member');
+          return $this->hasMany('App\Member')->orderBy('samhu_saheli','desc');
      }
      
 }

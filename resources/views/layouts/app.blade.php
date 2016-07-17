@@ -19,14 +19,23 @@
 
     
     @if(!(Request::is('*/create') || Request::is('*/edit')))
+        
     <!-- Material Design fonts -->
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
 
-  <!-- Bootstrap Material Design -->
-  <link rel="stylesheet" type="text/css" href="{!!asset('css/bootstrap-material-design.css')!!}">
-  <link rel="stylesheet" type="text/css" href="{!!asset('css/ripples.min.css')!!}">
+    <!-- Bootstrap Material Design -->
+    <link rel="stylesheet" type="text/css" href="{!!asset('css/bootstrap-material-design.css')!!}">
+    <link rel="stylesheet" type="text/css" href="{!!asset('css/ripples.min.css')!!}">
     @endif
+
+    @if(Request::is('*/create') || Request::is('*/edit'))
+    <script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    @endif
+
     <style>
         body {
             font-family: 'Lato';
@@ -116,6 +125,21 @@
             background: #24c2b3;
             margin-bottom: -1px;
         }
+        @media (max-width: 767px) { 
+            .nav-tabs > li {
+                float:none;
+                border:1px solid #dddddd;
+            }
+            .nav-tabs > li.active > a{
+                border:none;
+            }
+            .nav > li > a:hover, .nav > li > a:focus,
+            .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus
+             {
+                background:none;
+                border:none;
+            }
+        }
     </style>
 @yield('head')
 </head>
@@ -146,27 +170,27 @@
 
   
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/members') }}">SHG Women</a></li>
+                    <li @if(Request::is('members') || Request::is('members/*')) class="active" @endif><a href="{{ url('/members') }}">SHG Women</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/videos') }}">Videos</a></li>
+                    <li @if(Request::is('videos') || Request::is('videos/*')) class="active" @endif><a href="{{ url('/videos') }}">Videos</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/feedbacks') }}">Specific Feedback</a></li>
+                    <li @if(Request::is('feedbacks') || Request::is('feedbacks/*')) class="active" @endif><a href="{{ url('/feedbacks') }}">Specific Feedback</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/self-help-groups') }}">SHG Details</a></li>
+                    <li @if(Request::is('self-help-groups') || Request::is('self-help-groups/*')) class="active" @endif><a href="{{ url('/self-help-groups') }}">SHG Details</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/villages') }}">Villages</a></li>
+                    <li @if(Request::is('villages') || Request::is('villages/*')) class="active" @endif><a href="{{ url('/villages') }}">Villages</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/shg-coordinators') }}">SHG Coordinators</a></li>
+                    <li @if(Request::is('shg-coordinators') || Request::is('shg-coordinators/*')) class="active" @endif><a href="{{ url('/shg-coordinators') }}">SHG Coordinators</a></li>
                 </ul>
 
                 
@@ -197,10 +221,10 @@
     @yield('content')
 
     <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+    
+    
 @if(!(Request::is('*/create') || Request::is('*/edit')))
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="{!!asset('js/ripples.min.js')!!}"></script>
     <script src="{!!asset('js/material.min.js')!!}"></script>   
 
@@ -210,7 +234,20 @@
             $.material.init();
         });
     </script>
+    
 @endif
+
+@if(Request::is('*/create') || Request::is('*/edit'))
+    <script>
+        CKEDITOR.replace('.ckeditor');    
+    </script>
+    <script type="text/javascript">
+      $('.select2').select2();  
+    </script>
+@endif
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+{{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 
 </body>
 </html>

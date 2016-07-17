@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>
-<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">        
@@ -42,7 +38,7 @@
 							<div class="form-group form-inline">
 								<label for="samhu_saheli_id" class="col-sm-2">Samhu Saheli: </label>
 								
-								<select name="samhu_saheli_id" class="form-control samhu_saheli_id">
+								<select name="samhu_saheli_id" class="form-control select2">
 									<option value selected disabled>--Samhu Saheli--</option>
 								@foreach($samhu_sahelis as $samhu_saheli)
 									<option value="{{$samhu_saheli->id}}">{{$samhu_saheli->name}} (from {{$samhu_saheli->village->name}})</option>
@@ -164,11 +160,11 @@
 					    <div id="menu3" class="tab-pane fade">
 					    	<div class="form-group form-inline">
 								<label for="feedback">Overall Feedback: </label>
-								<textarea name="feedback" id="feedback"></textarea>
+								<textarea name="feedback" id="feedback" class="ckeditor"></textarea>
 							</div>
 							<div class="form-group form-inline">
 								<label for="success_story">Success Story: </label>
-								<textarea name="success_story" id="success_story"></textarea>
+								<textarea name="success_story" id="success_story" class="ckeditor"></textarea>
 							</div>
 					    </div>
 		    		</div>
@@ -184,13 +180,5 @@
         </div>
     </div>
 </div>
-<script>
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace( 'feedback');
-    CKEDITOR.replace( 'success_story');
-</script>
-<script type="text/javascript">
-  $('.samhu_saheli_id').select2();  
-</script>
+
 @endsection

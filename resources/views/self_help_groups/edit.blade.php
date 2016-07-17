@@ -1,10 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>
-<script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-md-offset-1">        
@@ -34,10 +31,10 @@
 							<div class="form-group form-inline">
 								<label for="village" class="col-sm-2">Village: </label>
 								
-								<select name="village_id" class="form-control">
+								<select name="village_id" class="form-control select2">
 									
 								@foreach($villages as $village)
-									<option value="{{$village->id}}" {{($shg->village_id == $village->id) ? 'selected="selected"' : ''}}>{{$village->name}}</option>
+									<option value="{{$village->id}}" {{($shg->village_id == $village->id) ? 'selected=selected' : ''}}>{{$village->name}}</option>
 								@endforeach
 								</select>
 							</div>						
@@ -62,7 +59,7 @@
 							<div class="form-group form-inline">
 								<label for="samhu_saheli_id" class="col-sm-2">Samhu Saheli: </label>
 								
-								<select name="samhu_saheli_id" class="form-control samhu_saheli_id" required="required">									
+								<select name="samhu_saheli_id" class="form-control select2" required="required">									
 									@if($shg->samhu_saheli_id == NULL)
 										<option value selected disabled>--Samhu Saheli--</option>
 										@foreach($samhu_sahelis as $samhu_saheli)
@@ -176,12 +173,12 @@
 					    <div id="menu3" class="tab-pane fade">
 							<div class="form-group">
 				    			<label for="feedback">Feedback</label>
-				    			<textarea name="feedback" id="feedback">{{$shg->feedback}}</textarea>
+				    			<textarea name="feedback" id="feedback" class="ckeditor">{{$shg->feedback}}</textarea>
 					     	</div>
 					     	<hr>
 					     	<div class="form-group">
 					    		<label for="success_story">Success Story</label>
-					    			<textarea name="success_story" id="success_story">{{$shg->success_story}}</textarea>
+					    			<textarea name="success_story" id="success_story" class="ckeditor">{{$shg->success_story}}</textarea>
 					     	</div>	
 					    </div>
 				    </div>
@@ -203,13 +200,5 @@
         </div>
     </div>
 </div>
-<script>
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace( 'feedback');
-    CKEDITOR.replace( 'success_story');
-</script>
-<script type="text/javascript">
-  $('.samhu_saheli_id').select2();  
-</script>
+
 @endsection
