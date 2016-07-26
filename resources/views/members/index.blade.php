@@ -36,7 +36,7 @@
                                 <div class="row">
                                 <div class="col-sm-2">
                                 <div class="thumbnail">
-                                <img class="img-responsive user-photo" @if(File::isFile($member->image)) src="{{url($member->image)}}" @else src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" @endif>
+                                <a href="{{url('members/'.$member->id)}}"><img class="img-responsive user-photo" @if(File::isFile($member->image)) src="{{url($member->image)}}" @else src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" @endif> </a>
                                 <strong>
                                     <a href="{{url('members/'.$member->id)}}">{{$member->name}}</a>
     
@@ -54,7 +54,7 @@
                                 <div class="col-sm-10">
                                 <div class="panel {{($member->samhu_saheli == 1) ? 'panel-info' : 'panel-default'}} panel-comment">
                                 <div class="panel-heading comment">
-                                <strong>{{$member->name}} {{($member->samhu_saheli == 1) ? '(Samhu Saheli)' : ''}}</strong>
+                                <strong><a href="{{url('members/'.$member->id)}}" style="text-decoration:none;color:inherit">{{$member->name}} {{($member->samhu_saheli == 1) ? '(Samhu Saheli)' : ''}}</a></strong>
                                 </div>
                                 <div class="panel-body">
                                 @if($member->profile !="")

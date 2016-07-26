@@ -87,6 +87,33 @@
 					    		<label for="success_story">Success Story: </label>
 					    			{!!$member->success_story!!}
 				    			<hr>
+				    			<label for="feedback_recordings"></label>
+				    			<div>
+				    				@if($member->feedback_recordings)    
+                                <div class="bs-callout bs-callout-feedback">
+                                    <h4>Feedback Recordings</h4>
+                                    <p>Video recording(s) of feedback of {{$member->name}} and Audio recording done by Pragya Baseria.</p>
+                                    @foreach (explode(', ', $member->feedback_recordings) as $feedback_recording)
+                                        @if(strpos($feedback_recording,'dropbox') !== false)
+                                          <div class="wrapper">
+                                          <video id="my-video" class="video-js vjs-default-skin" controls preload="none"data-setup="{}" width="auto" height="auto" >
+                                            <source src="{{ $feedback_recording }}" type='video/mp4'>                                     
+                                            <p class="vjs-no-js">
+                                              To view this video please enable JavaScript, and consider upgrading to a web browser that
+                                              <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                                            </p>
+                                      </video>
+                                      </div>
+                                      <br>
+                                    @elseif(strpos($feedback_recording,'google') !== false)
+                                        <p><strong>Audio Recording</strong></p> 
+                                        <iframe src="{{$feedback_recording}}" width="auto" height="auto"></iframe>
+                                    @endif                                     
+                                    @endforeach
+                                </div>
+                                @endif
+				    			</div>
+				    			<hr>
 					     		<label for="feedback_videos_detail">Feedback on videos: </label>
 					     			{!! $member->feedback_videos_detail !!}
 					     		<hr>		
