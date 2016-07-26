@@ -206,7 +206,9 @@
                                 @if($member->feedback_recordings)    
                                 <div class="bs-callout bs-callout-feedback">
                                     <h4>Feedback Recordings</h4>
+                                    <p>Video recording(s) of feedback of {{$member->name}} and Audio recording done by Pragya Baseria.</p>
                                     @foreach (explode(', ', $member->feedback_recordings) as $feedback_recording)
+                                        @if(strpos($feedback_recording,'dropbox') !== false)
                                           <div class="wrapper">
                                           <video id="my-video" class="video-js vjs-default-skin" controls preload="none"data-setup="{}" width="auto" height="auto" >
                                             <source src="{{ $feedback_recording }}" type='video/mp4'>                                     
@@ -216,7 +218,11 @@
                                             </p>
                                       </video>
                                       </div>
-                                      <br>                                      
+                                      <br>
+                                    @elseif(strpos($feedback_recording,'google') !== false)
+                                        <p><strong>Audio Recording</strong></p> 
+                                        <iframe src="{{$feedback_recording}}" width="auto" height="auto"></iframe>
+                                    @endif                                     
                                     @endforeach
                                 </div>
                                 @endif

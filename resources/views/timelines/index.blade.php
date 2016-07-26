@@ -29,6 +29,7 @@
                         {{($timeline->tags == 'danger') ? "panel-danger ": ''}}
                         {{($timeline->tags == "default") ? "panel-default" : ''}}
                         
+                        
                      panel-comment ">
                         <div class="panel-heading comment">
                         <h4><a href="#event-{{$timeline->id}}" data-toggle="collapse" style="text-decoration:inherit;color:inherit">{{$timeline->title}} <small style="color:inherit"><i class="fa fa-arrow-down"></i></small></a></h4>
