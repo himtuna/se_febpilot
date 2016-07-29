@@ -65,7 +65,7 @@ class MembersController extends Controller
         $image = $filepath . $filename;
         $member->image = $image;
 
-        if($request->can_write == 1 || $request->education_types != "No Education") {
+        if($request->can_write == 1) {
             $member->can_write = 1;
         }
         else $member->can_write = 0;
@@ -129,14 +129,14 @@ class MembersController extends Controller
         }
         else $member->samhu_saheli = 0;
 
-        if($request->can_write == 1 || $request->education_types != "No Education") {
+        if($request->can_write == 1) {
             $member->can_write = 1;
         }
         else $member->can_write = 0;
 
 
         if($request->feature_phone == 1) {
-            $member->feature_phone = 1;
+            $member->feature_phone = 1;            
         }
         else $member->feature_phone = 0;
 

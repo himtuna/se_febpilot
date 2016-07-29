@@ -31,7 +31,7 @@
                             
                             <div id="menu{{$village->id}}" class="tab-pane fade {{($i==0) ? 'in active': ''}}">
                                 
-                                @foreach($village->members as $member)
+                                @foreach($village->members as $index => $member)
                                 
                                 <div class="row">
                                 <div class="col-sm-2">
@@ -39,14 +39,15 @@
                                 <a href="{{url('members/'.$member->id)}}"><img class="img-responsive user-photo" @if(File::isFile($member->image)) src="{{url($member->image)}}" @else src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" @endif> </a>
                                 <strong>
                                     <a href="{{url('members/'.$member->id)}}">{{$member->name}}</a>
-    
-                                </strong> <br>
+                                        
+                                </strong><span class="pull-right">#{{$index+1}}</span> <br>
                                 <small>
                                     Age: {{($member->age )}} years<br>
                                     SHG: {{$member->shg_role}} <br>
                                     Education: {{$member->education}} <br>
                                     Marital Status: {{$member->marital_status}} <br>
-                                    Can she write: {{($member->can_write == 1) ? 'Yes' : 'No'}}
+                                    Can she write: {{($member->can_write == 1) ? 'Yes' : 'No'}} <br>
+                                    
                                 </small>
                                 </div><!-- /thumbnail -->
                                 </div><!-- /col-sm-1 -->
@@ -54,7 +55,7 @@
                                 <div class="col-sm-10">
                                 <div class="panel {{($member->samhu_saheli == 1) ? 'panel-info' : 'panel-default'}} panel-comment">
                                 <div class="panel-heading comment">
-                                <strong><a href="{{url('members/'.$member->id)}}" style="text-decoration:none;color:inherit">{{$member->name}} {{($member->samhu_saheli == 1) ? '(Samhu Saheli)' : ''}}</a></strong>
+                                <strong><a href="{{url('members/'.$member->id)}}" style="text-decoration:none;color:inherit">{{$member->name}} {{($member->samhu_saheli == 1) ? '(Samhu Saheli)' : ''}}</a></strong><span class="pull-right">#{{$index+1}}</span>
                                 </div>
                                 <div class="panel-body">
                                 @if($member->profile !="")
@@ -120,9 +121,17 @@
                                     </div>
 
                                     </div>
+                                @else
+                                    <div class="alert alert-danger"><p><strong>No Record Found!</strong> Please add profile.</p></div>
                                 @endif
-                                @if($member->feedback == NULL)
-                                <div class="alert alert-info"><p><strong>No Record Found!</strong> Feedback not available!</p></div>
+
+                                <div class="text-center">
+                                    <button data-toggle="collapse" data-target="#feedback-more-{{$member->id}}" class="btn btn-default btn-raised">Feedback</button>
+                                </div>
+
+                                <div class="collapse" id="feedback-more-{{$member->id}}">
+                                    @if($member->feedback == NULL)
+                                <div class="alert alert-danger"><p><strong>No Record Found!</strong> Please add feedback</p></div>
                                 @else 
                                 <!-- <h4 class="feedback-heading">Feedback</h4> -->
                                 <div class="bs-callout bs-callout-feedback">
@@ -226,6 +235,8 @@
                                     @endforeach
                                 </div>
                                 @endif
+                                </div>
+                                <!-- Feedback more ends -->
                                 
                                 </div><!-- /panel-body -->
                                 <div class="panel-footer">Village: <a href="{{url('villages/#'.$member->village->id)}}">{{$member->village->name}}</a>
@@ -248,4 +259,5 @@
     </div>
 </div>
 <script src="http://vjs.zencdn.net/5.10.4/video.js"></script>
+
 @endsection
